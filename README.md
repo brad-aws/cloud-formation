@@ -1,4 +1,4 @@
 # cloud-formation
-This repo is collection of somewhat useful AWS CloudFormation templates for lab rats and tinkerers.
+This repo is collection of AWS CloudFormation templates for experimental use.
 Authored by Brad Hedlund http://bradhedlund.com
 
