@@ -90,6 +90,11 @@
 
   },
 
+  "Metadata" : {
+	"Instances" : { "Description" : "On-demand instance running Amazon Linux."},
+	"SecurityGroup" : { "Description" : "Allows SSH access inbound."}	
+  },
+  
   "Resources" : {
     "EC2Instance" : {
       "Type" : "AWS::EC2::Instance",
