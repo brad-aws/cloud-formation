@@ -1,7 +1,7 @@
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
 
-  "Description" : "Creates an on-demand Amazon EC2 instance running the Amazon Linux AMI and security group for SSH access; associates the instance to an existing IAM instance profile, and launches the instance in the default VPC.  Instance keypair and AMI are chosen based on the region where the template is run.",
+  "Description" : "This template creates a single on-demand Amazon EC2 instance running the Amazon Linux AMI and creates a security group for SSH access. The instance is associated to an existing IAM profile, tagged, and launched in the default VPC.  SSH keys and AMI are chosen based on the region where the template is run.",
 
   "Parameters" : {
 
