@@ -14,8 +14,8 @@
       "ConstraintDescription" : "must be a valid EC2 instance type."
      },
 	 
-	  "Environment" : {
-		"Description" : "Pick the environment where the EC2 instance will be deployed",
+	  "EnvType" : {
+		"Description" : "Pick the type of environment where the EC2 instance will be deployed",
 		"Type" : "String",
 		"Default" : "Default",
 		"AllowedValues" : ["Default", "DEV", "PROD"]
@@ -104,8 +104,13 @@
         "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
         "KeyName" : { "Fn::FindInMap" : [ "AWSRegion2KeyName", { "Ref" : "AWS::Region" }, "Key1"] },
         "ImageId" : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" },
-                          { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] }
-      }
+                          { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] },
+      
+	  "Tags" : [ 
+	       { "Key" : "Stack", "Value" : "EC2Instance" },
+		   { "Key" : "Environment", "Value" : { "Ref" : "EnvType" } }
+		]
+	  }
     },
 
     "InstanceSecurityGroup" : {
